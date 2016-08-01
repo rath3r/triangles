@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": "https://github.com/rath3r/quick-gulp",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
     "gulp-connect": "^5.0.0",
     "gulp-less": "^3.1.0",
     "gulp-twig": "^0.5.0"

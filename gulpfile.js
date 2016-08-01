@@ -3,7 +3,9 @@
 var gulp = require('gulp'),
   connect = require('gulp-connect'),
   less = require('gulp-less'),
-  twig = require('gulp-twig');
+  twig = require('gulp-twig'),
+  concat = require('gulp-concat'),
+  clean = require('gulp-clean');
 
 gulp.task('webserver', function() {
   connect.server({
@@ -18,6 +20,11 @@ gulp.task('livereload', function() {
       'views/*.twig'
     ]).pipe(watch())
     .pipe(connect.reload());
+});
+
+gulp.task('clean', function () {
+    gulp.src('dist/*', {read: false})
+        .pipe(clean({force: true}));
 });
 
 gulp.task('twig', function () {
@@ -43,9 +50,23 @@ gulp.task('less', function() {
     .pipe(connect.reload());
 });
 
-gulp.task('watch', function() {
-    gulp.watch('assest/styles/*.less', ['less']);
-    gulp.watch('views/*.twig', ['twig']);
+gulp.task('scripts', function() {
+  return gulp.src('assets/scripts/**/*.js')
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('dist/scripts/'))
+    .pipe(connect.reload());
 });
 
-gulp.task('default', ['twig', 'less', 'webserver', 'watch']);
+gulp.task('watch', function() {
+    gulp.watch('assest/styles/*.less', ['less']);
+    gulp.watch('views/**/*.twig', ['twig']);
+});
+
+gulp.task('default', [
+  'clean',
+  'twig',
+  'less',
+  'scripts',
+  'webserver',
+  'watch'
+]);
