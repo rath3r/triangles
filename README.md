@@ -22,7 +22,7 @@ Rather than just using `.html` files [twig][6] is being used for templates.
 
 [1]:http://gulpjs.com/
 [2]:http://code.tutsplus.com/tutorials/gulp-as-a-development-web-server--cms-20903
-[2]:https://www.npmjs.com/package/gulp-connect
-[3]:https://www.npmjs.com/package/gulp-less
-[4]:https://www.npmjs.com/package/gulp-sass
-[5]:https://www.npmjs.com/package/gulp-twig
+[3]:https://www.npmjs.com/package/gulp-connect
+[4]:https://www.npmjs.com/package/gulp-less
+[5]:https://www.npmjs.com/package/gulp-sass
+[6]:https://www.npmjs.com/package/gulp-twig
