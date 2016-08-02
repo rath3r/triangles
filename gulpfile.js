@@ -5,7 +5,10 @@ var gulp = require('gulp'),
   less = require('gulp-less'),
   twig = require('gulp-twig'),
   concat = require('gulp-concat'),
-  clean = require('gulp-clean');
+  clean = require('gulp-clean'),
+  fs = require('fs'),
+  packagejson = JSON.parse(fs.readFileSync('./package.json'));;
+
 
 gulp.task('webserver', function() {
   connect.server({
@@ -31,7 +34,8 @@ gulp.task('twig', function () {
     return gulp.src('views/index.twig')
         .pipe(twig({
             data: {
-                title: 'Gulp and Twig',
+                title: 'Quick gulp setup',
+                author: packagejson.author,
                 benefits: [
                     'Fast',
                     'Flexible',
@@ -57,16 +61,21 @@ gulp.task('scripts', function() {
     .pipe(connect.reload());
 });
 
+gulp.task('bootstrap', function() {
+  return gulp.src('./assets/bower_components/bootstrap/dist/js/bootstrap.min.js')
+    .pipe(gulp.dest('./dist/scripts'));
+});
+
 gulp.task('watch', function() {
-    gulp.watch('assest/styles/*.less', ['less']);
+    gulp.watch('assets/styles/*.less', ['less']);
     gulp.watch('views/**/*.twig', ['twig']);
 });
 
 gulp.task('default', [
-  'clean',
   'twig',
   'less',
   'scripts',
+  'bootstrap',
   'webserver',
   'watch'
 ]);
