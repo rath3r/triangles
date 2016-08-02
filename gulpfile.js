@@ -69,6 +69,7 @@ gulp.task('bootstrap', function() {
 gulp.task('watch', function() {
     gulp.watch('assets/styles/*.less', ['less']);
     gulp.watch('views/**/*.twig', ['twig']);
+    gulp.watch('assets/scripts/**/*.js', ['scripts']);
 });
 
 gulp.task('default', [
