@@ -37,6 +37,10 @@ Rather than just using `.html` files [twig][6] is being used for templates.
 Currently using [concat][7] to pull all the javascript together. Maybe something
 like coffee could be the way forward.
 
+### Bootstrap
+
+For quick prototyping [Bootstrap][9] has been added via `bower`.
+
 ## Troubleshooting
 
 ### Unexplained error on startup
@@ -60,3 +64,4 @@ For example:
 [6]:https://www.npmjs.com/package/gulp-twig
 [7]:https://github.com/contra/gulp-concat
 [8]:https://www.npmjs.com/package/gulp-clean
+[9]:http://getbootstrap.com/
