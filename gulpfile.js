@@ -34,7 +34,7 @@ gulp.task('twig', function () {
     return gulp.src('views/index.twig')
         .pipe(twig({
             data: {
-                title: 'Quick gulp setup',
+                title: 'Triangles',
                 author: packagejson.author,
                 benefits: [
                     'Fast',
