@@ -1,12 +1,12 @@
 {
-  "name": "gulp-test",
+  "name": "Triangles",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "authors": [
     "Thomas Meehan thom.meehan@gmail.com"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/rath3r/quick-gulp",
+  "homepage": "https://github.com/rath3r/triangles",
   "ignore": [
     "**/.*",
     "node_modules",
